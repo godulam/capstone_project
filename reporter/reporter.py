@@ -49,7 +49,7 @@ def create_report():
         report_name = "report_" + hostname + "_" + timestamp
         
         try:
-            with open("/home/ubuntu/capstone_project/reports/"+report_name, "w") as report_file:
+            with open("/home/ubuntu/capstone_project/reporter/reports/"+report_name, "w") as report_file:
                 for k,v in sorted(data.items()):
                     report_file.write(k + " " + v + " \n")
             report_file.close()
