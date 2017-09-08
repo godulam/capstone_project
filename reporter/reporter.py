@@ -12,6 +12,7 @@ def create_report():
         top_out = top_out.split("\n")
         df_out = (subprocess.check_output("df -m | grep -m 1 /dev/", shell=True)).decode()
         df_out = df_out.split()
+        cpu_p = (subprocess.check_output("top -b -n 5 -d.2 | grep \"Cpu\" | tail -n1 | awk '{print($2)}' | cut -d'%' -f 1", shell=True)).decode()
     except:
         print("An error occurred")
     else:
@@ -19,15 +20,13 @@ def create_report():
         data = {}
         data["hostname"] = hostname
         data["timestamp"] = timestamp
+        data["cpu_load"] = str(float(cpu_p))
         for line in top_out:  
             line = line.split()  
             #print(line) 
             if 2 > len(line):
                 break
-            if "%Cpu(s):" == line[0]:
-                cpu_load = float(line[1].replace(",","."))/100
-                data["cpu_load"] = str(cpu_load)
-            elif "Mem" == line[1]:
+            if "Mem" == line[1]:
                 data["mem_total"] = line[line.index("total,")-1]
                 data["mem_free"] = line[line.index("free,")-1]
                 data["mem_used"] = line[line.index("used,")-1]
@@ -37,7 +36,6 @@ def create_report():
                 if "min," == line[5]:
                     data["uptime"] = line[4]
                 else:
-                    print(line)
                     uptime = (line[4].replace(",","")).split(":")
                     data["uptime"] = str(int(uptime[0])*60 + int(uptime[1]))
             elif "Tasks:" == line[0]:
