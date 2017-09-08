@@ -3,7 +3,7 @@
 import subprocess
 
 
-PATH_TO_REPORTS = "/home/ubuntu/capstone_project/reports/report*"
+PATH_TO_REPORTS = "/home/ubuntu/capstone_project/reporter/reports/report*"
 
 def import_report(server):
     try:
