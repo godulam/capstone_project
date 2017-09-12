@@ -1,0 +1,194 @@
+
+body {
+	background-color: black;
+   font-family: 'Oswald', sans-serif;
+   color: white;
+}
+h1 {
+	font-family: 'Marcellus SC', serif;
+	text-align: center;
+}
+
+h3 {
+	font-family: 'Oswald', sans-serif;
+	text-align: left;
+	visibility: inherit;
+}
+.nav {
+	display: inline-table;
+	left: 0px;
+	width: 10%;
+	margin-left: 0px;
+	position: fixed;
+
+}
+.nav ul{
+	list-style-type: none;
+	list-style-position: inside;
+	padding-left: 0%;
+	padding-top: 0%;
+	padding-bottom: 0%;
+	padding-right: 0%;
+	color: black;
+	text-decoration: none;
+}
+.nav ul li {
+	padding: 5px 5px 5px 5px;
+	margin-left: 1px;
+	margin-top: 5px;
+	background-color: #FFFFFF;
+	text-decoration: none;
+	clear: both;
+}
+.nav ul li:hover {
+	background-color: lightgray;
+}
+a, a:visited, a:link {
+	text-decoration: none;
+	color: black;
+}
+/*
+.nav ul li:link{
+	clear: both;
+	text-decoration: none;
+	
+.nav ul li:hover{
+	background-color: peachpuff;
+}
+}
+.nav ul li:visited{
+	clear: both;
+	text-decoration: none;
+}
+}*/
+
+.boxf {
+margin: 0px;
+display: block;
+float: left;
+padding: 0px;
+border: 0px 0px 0px 0px;
+}
+.nc {
+	display: block;
+	clear: both;
+}
+.content{
+	display: inline-table;
+	width: 86%;
+	height: 100%;
+	margin-left: 10.5%;
+}
+/*.content p {
+	text-align: justify;
+	display: inline-block;
+	margin-top: 21%;
+} */
+#chart-container {
+				/*width: 640px;*/
+				/*height: auto;*/
+			/*	margin-left: 20%;*/
+}
+canvas {
+	height:400px;
+	width: 400px;
+	visibility: inherit;
+	display: block;
+}
+.boxh {
+width: 600px;
+height: inherit;
+margin: 0px;
+display: inline-table;
+padding: 0px;
+border: 0px 0px 0px 0px;
+}
+.boxhf{
+	width: 100%;
+	height: inherit;
+	margin: 0px;
+	display: inline-table;
+	padding: 0px;
+	border: 0px 0px 0px 0p
+} 
+.boxha {
+
+	height: inherit;
+	margin: 0px;
+	float: left;
+	padding: 0px;
+	border: 0px 0px 0px 0p
+}
+.main {
+	display: block;
+	clear: both;
+	padding: 0% 0% 1% 0%;
+	margin: 2px 2px 2px 2px;
+	height: auto;
+}
+input[type=number], select, .mybutton, .boxhf p {
+    border: none;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    box-sizing: border-box;
+}
+input[type=number], select, .boxhf p {
+	    background-color: black;
+	    color: white;
+}
+input[type=number], select, {
+	border: 2px solid white;
+}
+.mybutton{
+	    background-color: black;
+	    color: white;
+	    border: 2px solid white; 
+}
+.mybutton:active, .mybutton:hover {
+		background-color: white;
+	    color: black;
+	    border: 2px solid white; 
+}
+.hidebutton{
+	float: right;
+	bottom: 1px;
+	display: block;
+}
+table, th, td {
+	margin-left: 2px;
+	visibility: visible;
+	border-color: white;
+	border: 1px solid white;
+	border-collapse: collapse;
+}
+.alert {
+	color: red;
+	clear:  both;
+	height: 150px;
+	/*width: 50%;*/
+	overflow-x: auto;
+	overflow-y: scroll;
+}
+/*#graph4{
+	border: 2px solid red;
+	height: 570px;
+}*/
+#table1, #table2, #table3, #table4, #table5, #table6 {
+overflow: auto;
+visibility: inherit;
+}
+.tablebox {
+	visibility: 'hidden';
+	border: 2px solid white; 
+	width: 100%;
+	display:none; 
+}
+.chart{
+	width: 100%;
+}
