@@ -1,28 +1,29 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>
   <title></title>
-  <link rel="stylesheet" href="capstone2.css" />
+  <link rel="stylesheet" href="capstone.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marcellus+SC|Oswald">
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script> 
-  <!--script src="js/jquery.min.js" ></script-->
-<?php
-if(isset($_POST["qtimeval"])  && isset($_POST["qtimeunit"]) && isset($_POST["qhost"]) ) {
+  <!--script src="jquery.min.js" ></script -->
+  <?php
+if(isset($_POST["qtimeval"])  && isset($_POST["qhost"]) ) {
 	echo "<script>qtimeval='" . $_POST["qtimeval"] . "'</script>";
-	echo "<script>qtimeunit='" . $_POST["qtimeunit"] . "'</script>";	
+/*	echo "<script>qtimeunit='" . $_POST["qtimeunit"] . "'</script>";*/	
 	echo "<script>qhost='" . $_POST["qhost"] . "'</script>";
 }; 
 ?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-  <!--script type="text/javascript" src="js/Chart.min.js"></script -->
+  <script type="text/javascript" src="Chart.min.js"></script>
   <script type="text/javascript" src="currentgauge.js"></script>	
-  <script type="text/javascript" src="cpuapp.js"></script>	
-  <script type="text/javascript" src="cpuappd.js"></script>	  	
-  <script type="text/javascript" src="cputable.js"></script>	
+  <script type="text/javascript" src="hostapp.js"></script>
+  <script type="text/javascript" src="cpuapp.js"></script>
+  <script type="text/javascript" src="cpuappd.js"></script>
+  <script type="text/javascript" src="cputable.js"></script>    	
   <script type="text/javascript" src="newappA.js"></script>	  
-  <script type="text/javascript" src="showtable.js"></script>
-  <script type="text/javascript" src="hostapp.js"></script>		  
- 
+  <script type="text/javascript" src="showtable.js"></script>		  
+  
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   
 </head>
@@ -45,31 +46,33 @@ if(isset($_POST["qtimeval"])  && isset($_POST["qtimeunit"]) && isset($_POST["qho
 </ul>
 </div>
 </div>
-<div class="boxf content ">  
-
-	<div class="main">
-	<div class="boxh">	
-	<h3>Alerts:</h3>
-	<div class="boxha alert" id="alerts" >ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE!<br/>
+<div class="boxf content "> 
+ 
+	
+	<div class="main "  >
+	<div class="boxf"  >	
+	<div class="boxha " >	
+		<h3>Alerts:</h3>
+		<div  id="alerts" class="alert" >  ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE!<br/>
 	ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE!<br/>
 	ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE!<br/>
 	ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE! ALERTS GO HERE!<br/>	</div>
 	</div>
-	<div class="boxh" >
-		   <h3>Current usage top </h3>
-    		<div class="boxha " id="gauge" style="border: 1px solid white; ">
-	    		<br/>--------------------------------------------------------------------------------------------------- <br/> <br/> <br/> <br/> <br/>
-	    		<br/>--------------------------------------------------------------------------------------------------- <br/>   		
-    		</div>
+	   <div class="boxha" >
+    		<h3>Current usage</h3>
+    		<div id="gauge"> </div>
+  	   </div> 
 	</div>
 	</div>
+
+
 	<div class="main"  >
 	<h3>Display options:</h3>
 	<div class="boxhf " >
-		<form  method="post" action="index2.php">
-		<p>Show data collected over the last</p> <input type="number" name="qtimeval" value="7" min="1" max="30">
-		<select name="qtimeunit" >
-			<option value="DAY" > day(s)</option><option value="MONTH" > month(s)</option><option value="YEAR" > year(s)</option>		 
+		<form  method="post" action="index.php">
+		<p>Show data collected over the last</p> 
+		<select name="qtimeval" >
+			<option value="1" > day </option><option value="7" > week</option>		 
 		 </select>
 		 <p>for server:</p>
       <select name="qhost" id="hostselect" >
@@ -79,11 +82,7 @@ if(isset($_POST["qtimeval"])  && isset($_POST["qtimeunit"]) && isset($_POST["qho
     <input class="mybutton" type="submit" value="SUBMIT" >
 		</form>
 	</div>
-     <hr>
-<!---  <div class="main" >
-    <h3>Current usage</h3>
-    <div class="boxh " id="gauge" ></div>
-  </div>-->    
+     <hr>   
      
 	<div class="main" id="cpu">
 		<div class="boxf chart"  >
@@ -104,7 +103,8 @@ if(isset($_POST["qtimeval"])  && isset($_POST["qtimeunit"]) && isset($_POST["qho
 			 Some text inside.
 			</div>
 		</div> 
-	</div>	
+		</div>
+		</div>	
 	<div class="main" id="uptime" >
 		<div class="boxf chart" >
 		<h3>2. Uptime</h3>			

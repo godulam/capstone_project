@@ -1,7 +1,7 @@
 $(document).ready(function tableone(){
 	console.log(qhostname);
 	$.ajax({
-		url: "http://localhost/hostdata.php",
+		url: "http://localhost/capstone/new/hostdata.php",
 		method: "GET",
 		success: function(hdata){
 			console.log(hdata);

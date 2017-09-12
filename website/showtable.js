@@ -19,4 +19,5 @@ function showtable(tid) {
 	else {
 		tabl.style.display='none';
 	} 
-}; */
+};
+*/

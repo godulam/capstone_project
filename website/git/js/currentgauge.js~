@@ -5,7 +5,7 @@ $(document).ready(function(){
 	 google.charts.setOnLoadCallback(wrapper);
     function wrapper() {
       $.ajax({
-	  	 url: "http://localhost/currendata.php",
+	  	 url: "currentdata.php",
 	 //?qtimeval='" + qtimeval + "'&qtimeunit='" + qtimeunit + "'&qhost='" + qhost + "'&cpu='" + cpu + "'&mem='" + mem + "'&disk='" + disk + "'",
 		 method: "GET",
 		 success: function(cdata) {

@@ -1,8 +1,8 @@
 
 body {
-	background-color: black;
-        font-family: 'Oswald', sans-serif;
-	color: white;
+	background-color: white;
+   font-family: 'Oswald', sans-serif;
+   color: black;
 }
 h1 {
 	font-family: 'Marcellus SC', serif;
@@ -96,7 +96,7 @@ canvas {
 	display: block;
 }
 .boxh {
-width: 550px;
+width: 600px;
 height: inherit;
 margin: 0px;
 display: inline-table;
@@ -164,7 +164,7 @@ table, th, td {
 	margin-left: 2px;
 	visibility: visible;
 	border-color: white;
-	border: 1px solid transparent;
+	border: 1px solid white;
 	border-collapse: collapse;
 }
 .alert {

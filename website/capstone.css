@@ -1,8 +1,8 @@
 
 body {
 	background-color: black;
-        font-family: 'Oswald', sans-serif;
-	color: white;
+   font-family: 'Oswald', sans-serif;
+   color: white;
 }
 h1 {
 	font-family: 'Marcellus SC', serif;
@@ -96,7 +96,7 @@ canvas {
 	display: block;
 }
 .boxh {
-width: 550px;
+width: 600px;
 height: inherit;
 margin: 0px;
 display: inline-table;
@@ -112,12 +112,17 @@ border: 0px 0px 0px 0px;
 	border: 0px 0px 0px 0p
 } 
 .boxha {
-
 	height: inherit;
-	margin: 0px;
-	float: left;
-	padding: 0px;
-	border: 0px 0px 0px 0p
+	
+	margin: 0px 5px 18px 0px;
+	display: inline-table;
+	padding: 0%;
+	border: 0px 0px 5px 0px;
+}
+.boxha div{
+	width: 550px;
+	height: inherit;
+	display: inline-table;
 }
 .main {
 	display: block;
@@ -164,16 +169,18 @@ table, th, td {
 	margin-left: 2px;
 	visibility: visible;
 	border-color: white;
-	border: 1px solid transparent;
+	border: 1px solid white;
 	border-collapse: collapse;
 }
 .alert {
-	color: red;
 	clear:  both;
-	height: 150px;
-	/*width: 50%;*/
+	height: 100px;
+	min-width: 500px;
+	margin-right: auto;
+	padding-right: 5px;
 	overflow-x: auto;
 	overflow-y: scroll;
+	display: inline-table;
 }
 /*#graph4{
 	border: 2px solid red;

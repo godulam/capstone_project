@@ -4,9 +4,9 @@
   <title></title>
   <link rel="stylesheet" href="capstone2.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marcellus+SC|Oswald">
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script> 
-  <!--script src="js/jquery.min.js" ></script-->
-<?php
+<!--  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script> -->
+  <script src="js/jquery.min.js" ></script>
+  <?php
 if(isset($_POST["qtimeval"])  && isset($_POST["qtimeunit"]) && isset($_POST["qhost"]) ) {
 	echo "<script>qtimeval='" . $_POST["qtimeval"] . "'</script>";
 	echo "<script>qtimeunit='" . $_POST["qtimeunit"] . "'</script>";	
@@ -14,16 +14,16 @@ if(isset($_POST["qtimeval"])  && isset($_POST["qtimeunit"]) && isset($_POST["qho
 }; 
 ?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-  <!--script type="text/javascript" src="js/Chart.min.js"></script -->
-  <script type="text/javascript" src="currentgauge.js"></script>	
-  <script type="text/javascript" src="cpuapp.js"></script>	
-  <script type="text/javascript" src="cpuappd.js"></script>	  	
-  <script type="text/javascript" src="cputable.js"></script>	
-  <script type="text/javascript" src="newappA.js"></script>	  
-  <script type="text/javascript" src="showtable.js"></script>
-  <script type="text/javascript" src="hostapp.js"></script>		  
+  <script type="text/javascript" src="js/Chart.min.js"></script>
+  <script type="text/javascript" src="js/currentgauge.js"></script>	
+  <script type="text/javascript" src="js/cpuapp.js"></script>	
+<!--  <script type="text/javascript" src="js/cpugraph.js"></script>
+  <script type="text/javascript" src="js/cpugraphd.js"></script>	  	
+  <script type="text/javascript" src="js/cputable.js"></script>	-->
+  <script type="text/javascript" src="js/newappA.js"></script>	  
+  <script type="text/javascript" src="js/showtable.js"></script>		  
  
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javas cript" src="https://www.gstatic.com/charts/loader.js"></script>
   
 </head>
 <body>
@@ -66,7 +66,7 @@ if(isset($_POST["qtimeval"])  && isset($_POST["qtimeunit"]) && isset($_POST["qho
 	<div class="main"  >
 	<h3>Display options:</h3>
 	<div class="boxhf " >
-		<form  method="post" action="index2.php">
+		<form  method="post" action="index.php">
 		<p>Show data collected over the last</p> <input type="number" name="qtimeval" value="7" min="1" max="30">
 		<select name="qtimeunit" >
 			<option value="DAY" > day(s)</option><option value="MONTH" > month(s)</option><option value="YEAR" > year(s)</option>		 

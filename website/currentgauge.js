@@ -5,31 +5,30 @@ $(document).ready(function(){
 	 google.charts.setOnLoadCallback(wrapper);
     function wrapper() {
       $.ajax({
-	  	 url: "http://localhost/currendata.php",
-	 //?qtimeval='" + qtimeval + "'&qtimeunit='" + qtimeunit + "'&qhost='" + qhost + "'&cpu='" + cpu + "'&mem='" + mem + "'&disk='" + disk + "'",
+	  	 url: "currentdata.php?qtimeval='" + qtimeval + "'&qtimeunit='" + qtimeunit  + "'&qhost='" + qhost + "'",
 		 method: "GET",
 		 success: function(cdata) {
 			  console.log(cdata);
 	//! replace all instances of ldata with cdata before moving to production!		  
-	/*		  var cpus = 0.678;
-		  	  var memu = 887766;
-		  	  var memt = 8877661;
-			  var disku = 0.333;
-			  var diskf = 0.666;*/
+			  var cpus = [];
+		  	  var memu = 0;
+		  	  var memt = 0;
+			  var disku = 0;
+			  var diskf = 0;
 
-			  cpus+=parseInt(cdata[i]["cpu_load"]);
-			  memu+=parseInt(cdata[i]["mem_used"]);
-			  memt+=parseInt(cdata[i]["mem_total"]);
-			  disku+=parseInt(cdata[i]["disk_used"]);
-			  diskf+=parseInt(cdata[i]["disk_free"]) ;
+			  cpus+=(cdata[0]["cpu_load"]);
+			  memu+=(cdata[0]["mem_used"]);
+			  memt+=(cdata[0]["mem_total"]);
+			  disku+=(cdata[0]["disk_used"]);
+			  diskf+=(cdata[0]["disk_free"]) ;
 						
 		 	  console.log(cpus);
-			  console.log(disku[0]);
+			  console.log(cpus[0]);
  
 	        var datag = google.visualization.arrayToDataTable([
           	  ['Counter', 'Value'],
-          	  ['CPU', cpus],
-          	  ['Disk', disku],
+          	  ['CPU', parseInt(cpus)],
+          	  ['Disk', parseInt(disku)],
           	  ['Memory',parseInt((memu/memt)*100)]
  	        ]);	
 				console.log(datag);
