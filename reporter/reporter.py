@@ -13,6 +13,8 @@ def create_report():
         df_out = (subprocess.check_output("df -m | grep -m 1 /dev/", shell=True)).decode()
         df_out = df_out.split()
         cpu_p = (subprocess.check_output("top -b -n 5 -d.2 | grep \"Cpu\" | tail -n1 | awk '{print($2)}' | cut -d'%' -f 1", shell=True)).decode()
+        uptime = (subprocess.check_output("cat /proc/uptime", shell=True)).decode()
+        uptime = uptime.split()
     except:
         print("An error occurred")
     else:
@@ -32,20 +34,14 @@ def create_report():
                 data["mem_used"] = line[line.index("used,")-1]
             elif "Swap:" == line[1]:
                 data["swap_used"] = line[line.index("used.")-1]
-            elif "top" == line[0]:
-                if "min," == line[5]:
-                    data["uptime"] = line[4]
-                else:
-                    uptime = (line[4].replace(",","")).split(":")
-                    data["uptime"] = str(int(uptime[0])*60 + int(uptime[1]))
             elif "Tasks:" == line[0]:
                 data["proc_num"] = line[line.index("total,")-1]
         #print(df_out)  
         data["disk_free"] = df_out[3]
         disk_used = float(df_out[4].replace("%",""))/100
         data["disk_used"] = str(disk_used)
+        data["uptime"] = str(int(float(uptime[0])/60))
         report_name = "report_" + hostname + "_" + timestamp
-        
         try:
             with open("/home/ubuntu/capstone_project/reporter/reports/"+report_name, "w") as report_file:
                 for k,v in sorted(data.items()):
